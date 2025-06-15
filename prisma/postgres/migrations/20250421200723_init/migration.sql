@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "AuthToken" ALTER COLUMN "userId" SET DATA TYPE TEXT;

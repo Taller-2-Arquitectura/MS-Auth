@@ -1,0 +1,30 @@
+{
+  "name": "taller",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "build": "npx prisma generate --schema=prisma/mariadb/schema.prisma && npx prisma generate --schema=prisma/mariadbBill/schema.prisma && npx prisma generate --schema=prisma/postgres/schema.prisma",
+    "migrate": "npx prisma db push --schema=prisma/mariadb/schema.prisma && npx prisma db push --schema=prisma/mariadbBill/schema.prisma && npx prisma db push --schema=prisma/postgres/schema.prisma",
+    "seed": "node src/database/seeders/seed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@faker-js/faker": "^9.7.0",
+    "@grpc/grpc-js": "^1.13.4",
+    "@grpc/proto-loader": "^0.7.15",
+    "@prisma/client": "^6.6.0",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.14.0",
+    "morgan": "^1.10.0",
+    "prisma": "^6.6.0"
+  }
+}

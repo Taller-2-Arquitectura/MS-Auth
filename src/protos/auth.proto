@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package auth;
+
+service Auth {
+  rpc Login (LoginRequest) returns (LoginResponse);
+  rpc UpdatePassword (UpdatePasswordRequest) returns (UpdatePasswordResponse);
+}
+
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string token = 1;
+  UserInfo user = 2;
+}
+
+message UserInfo {
+  string id = 1;
+  string name = 2;
+  string lastName = 3;
+  string email = 4;
+  string rol = 5;
+}
+
+message UpdatePasswordRequest {
+  string userId = 1;
+  string requesterId = 2;
+  string currentPassword = 3;
+  string newPassword = 4;
+  string confirmNewPassword = 5;
+}
+
+message UpdatePasswordResponse {
+  string message = 1;
+}
