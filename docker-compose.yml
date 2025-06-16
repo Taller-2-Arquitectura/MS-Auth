@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres-auth
+    environment:
+      POSTGRES_DB: auth-db
+      POSTGRES_USER: auth
+      POSTGRES_PASSWORD: authpass
+    ports:
+    - "5432:5432"
+  rabbitmq:
+        image: rabbitmq:3-management 
+        container_name: rabbitmq-videos
+        ports:
+        - "5672:5672"       
+        - "15672:15672"    
+        environment:
+            RABBITMQ_DEFAULT_USER: guest
+            RABBITMQ_DEFAULT_PASS: guest
