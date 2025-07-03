@@ -12,12 +12,12 @@ const environments = {
 config({ path: "./.env" });
 
 
-const DB = process.env.MONGO_DATABASE.replace(
-    "<PASSWORD>",
-    process.env.MONGO_PASSWORD
-  ).replace("<USER>", process.env.MONGO_USER);
+// const DB = process.env.MONGO_DATABASE.replace(
+//     "<PASSWORD>",
+//     process.env.MONGO_PASSWORD
+//   ).replace("<USER>", process.env.MONGO_USER);
   
-  connect(DB).then(() => console.log("✓ Conexión a base de datos exitosa"));
+//   connect(DB).then(() => console.log("✓ Conexión a base de datos exitosa"));
 
 const PORT = 3002;
 const enviroment = "Desarrollo";
